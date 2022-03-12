@@ -1,12 +1,12 @@
 const tbody = document.getElementById("tbodyUserList");
 
 window.onload = () => {
-    alert(`Your apiKey is: "${DecryptStringAES(localStorage.getItem("apiKey"))}`);
+    alert(`Your apiKey is: "${DecryptStringAES(sessionStorage.getItem("apiKey"))}`);
     getApiUserList();
     setInterval(getApiUserList, 5000);
 }
 
-const getApiUserList = async () => {
+const getApiUserList = async (pageNumber) => {
     showLoading();
     //////axios
     try {

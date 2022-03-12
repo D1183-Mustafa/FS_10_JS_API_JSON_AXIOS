@@ -32,8 +32,8 @@ const postCustumerRegister = async() =>{
             removeLoading();
         }
         else{
-            localStorage.setItem("baseUrl", EncryptStringAES("https://reqres.in"));
-            localStorage.setItem("apiKey", EncryptStringAES(userData.token));
+            sessionStorage.setItem("baseUrl", EncryptStringAES("https://reqres.in"));
+            sessionStorage.setItem("apiKey", EncryptStringAES(userData.token));
             removeLoading();
             window.location.href = "userList.html";
         }
