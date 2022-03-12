@@ -42,5 +42,7 @@ const showLoading = () => {
 }
 
 const removeLoading = () => {
-    loading.style.display = "none";
+    setTimeout(()=>{
+        loading.style.display = "none";
+    },1000);
 }
