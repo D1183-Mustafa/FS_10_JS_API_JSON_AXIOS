@@ -2,10 +2,10 @@ const mail = document.querySelector("#email");
 const password = document.querySelector("#password");
 const sbmtButton = document.querySelector("#submit");
 
-window.addEventListener("load", ()=>{
-    mail.value = "eve.holt@reqres.in";
-    password.value = "pistol";
-});
+// window.addEventListener("load", ()=>{
+//     mail.value = "eve.holt@reqres.in";
+//     password.value = "pistol";
+// });
 
 sbmtButton.addEventListener("click", e =>{
     postCustumerRegister();
@@ -13,10 +13,12 @@ sbmtButton.addEventListener("click", e =>{
 
 const postCustumerRegister = async() =>{
     // alert("customer data sended");
+
     const bodyData = {
         email:mail.value,
         password:password.value
     };
+    // console.log(bodyData);
     // console.log(JSON.stringify(bodyData));
     try {
         showLoading();
@@ -25,6 +27,7 @@ const postCustumerRegister = async() =>{
             method:"post",
             data:bodyData
         });
+        // console.log(response);
         const {data:userData} = response;
         console.log(userData);
         if(userData.token == undefined){
